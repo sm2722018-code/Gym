@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>PowerFit Club - Fitness & Gym</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+ *{margin:0;padding:0;box-sizing:border-box;}
+ body{
+ font-family: Arial, Helvetica, sans-serif;
+ background:#f3f4f6;
+ color:#111827;
+ }
+ header{
+ background:#111827;
+ color:#fff;
+ padding:10px 20px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ flex-wrap:wrap;
+ }
+ .logo{font-weight:bold;font-size:18px;}
+ nav a{
+ color:#e5e7eb;
+ text-decoration:none;
+ margin-left:15px;
+ font-size:14px;
+ }
+ nav a:hover{color:#fff;}
+ .hero{
+ background:#0f172a;
+ color:#f9fafb;
+ padding:20px;
+ display:flex;
+ flex-wrap:wrap;
+ gap:20px;
+ align-items:center;
+ justify-content:center;
+ }
+ .hero-text{flex:1 1 260px;min-width:260px;}
+ .hero-text h1{
+ font-size:26px;
+ margin-bottom:10px;
+ }
+ .hero-text p{
+ font-size:14px;
+ margin-bottom:10px;
+ color:#e5e7eb;
+ }
+ .hero-buttons button{
+ padding:8px 14px;
+ border:none;
+ cursor:pointer;
+ border-radius:4px;
+ font-size:13px;
+ margin-right:8px;
+ }
+ .btn-primary{background:#22c55e;color:#022c22;}
+ .btn-outline{
+ background:transparent;
+ color:#22c55e;
+ border:1px solid #22c55e;
+ }
+ .hero-img{flex:1 1 260px;min-width:260px;text-align:center;}
+ .hero-img img{
+ max-width:100%;
+ border-radius:8px;
+ }
+ section{
+ padding:20px;
+ max-width:1100px;
+ margin:0 auto;
+ }
+ section h2{
+ font-size:20px;
+ margin-bottom:8px;
+ border-left:4px solid #22c55e;
+ padding-left:6px;
+ color:#111827;
+ }
+ section p{
+ font-size:14px;
+ margin-bottom:8px;
+ color:#374151;
+ }
+ .two-col,
+ .card-grid{
+ display:flex;
+ flex-wrap:wrap;
+ gap:15px;
+ margin-top:10px;
+ }
+ .card{
+ background:#ffffff;
+ padding:12px;
+ border-radius:6px;
+ box-shadow:0 2px 6px rgba(0,0,0,0.08);
+ flex:1 1 260px;
+ min-width:260px;
+ font-size:13px;
+ }
+ .card h3{font-size:16px;margin-bottom:6px;}
+ /* Class schedule table */
+ table{
+ width:100%;
+ border-collapse:collapse;
+ font-size:13px;
+ margin-top:8px;
+ background:#ffffff;
+ border-radius:6px;
+ overflow:hidden;
+ box-shadow:0 2px 6px rgba(0,0,0,0.05);
+ }
+ th,td{
+ padding:6px 8px;
+ border:1px solid #e5e7eb;
+ text-align:center;
+ }
+ th{
+ background:#111827;
+ color:#f9fafb;
+ font-weight:600;
+ }
+ tr:nth-child(even){
+ background:#f9fafb;
+ }
+ /* Trainer cards */
+ .trainer{
+ display:flex;
+ gap:10px;
+ align-items:center;
+ }
+ .trainer img{
+ width:70px;
+ height:70px;
+ border-radius:50%;
+ object-fit:cover;
+ }
+ .trainer-info h4{
+ font-size:14px;
+ margin-bottom:2px;
+ }
+ .trainer-info span{
+ font-size:12px;
+ color:#6b7280;
+ }
+ /* Pricing */
+ .price{
+ font-size:18px;
+ font-weight:bold;
+ color:#16a34a;
+ margin-bottom:4px;
+ }
+ .price span{
+ font-size:11px;
+ color:#6b7280;
+ font-weight:normal;
+ }
+ .card ul{
+ margin-left:18px;
+ }
+ .card li{
+ margin-bottom:4px;
+ }
+ /* Blog */
+ .blog-card{
+ background:#ffffff;
+ border-radius:6px;
+ box-shadow:0 2px 6px rgba(0,0,0,0.05);
+ padding:10px;
+ font-size:13px;
+ flex:1 1 260px;
+ min-width:260px;
+ }
+ .blog-card h3{font-size:15px;margin-bottom:4px;}
+ .blog-meta{
+ font-size:11px;
+ color:#6b7280;
+ margin-bottom:4px;
+ }
+ /* Membership form small */
+ .form-group{
+ margin-bottom:8px;
+ font-size:13px;
+ }
+ .form-group label{
+ display:block;
+ margin-bottom:3px;
+ }
+ .form-group input,
+ .form-group select{
+ width:100%;
+ padding:6px;
+ border-radius:4px;
+ border:1px solid #d1d5db;
+ font-size:13px;
+ }
+ footer{
+ background:#111827;
+ color:#9ca3af;
+ text-align:center;
+ padding:10px;
+ font-size:12px;
+ margin-top:10px;
+ }
+ @media(max-width:600px){
+ header{justify-content:center;gap:8px;}
+ nav{width:100%;text-align:center;}
+ nav a{margin:0 8px;}
+ .hero{padding-inline:10px;}
+ section{padding-inline:10px;}
+ }
+ </style>
+</head>
+<body>
+ <!-- Header -->
+ <header>
+ <div class="logo">PowerFit Club</div>
+ <nav>
+ <a href="#schedule">Classes</a>
+ <a href="#trainers">Trainers</a>
+ <a href="#membership">Membership</a>
+ <a href="#blog">Fitness Blog</a>
+ </nav>
+ </header>
+ <!-- Hero -->
+ <section class="hero">
+ <div class="hero-text">
+ <h1>Stronger every day, one session at a time.</h1>
+ <p>
+ PowerFit Club ek modern gym hai jahan functional training, strength, yoga aur
+group classes ke
+ through members ko guided fitness journey milti hai. [web:130]
+ </p>
+ <div class="hero-buttons">
+ <button class="btn-primary" onclick="scrollToSection('membership')">Join
+Now</button>
+ <button class="btn-outline" onclick="scrollToSection('schedule')">View Class
+Schedule</button>
+ </div>
+ </div>
+ <div class="hero-img">
+ <img src="data:image/jpeg;base64,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"
+ alt="People training in gym">
+ </div>
+ </section>
+ <!-- Class Schedule -->
+ <section id="schedule">
+ <h2>Class Schedule</h2>
+ <p>Schedule me daily classes clearly dikhane se members ko plan banana easy
+ho jata hai. [web:125][web:131]</p>
+ <table>
+ <tr>
+ <th>Time</th>
+ <th>Mon</th>
+ <th>Tue</th>
+ <th>Wed</th>
+ <th>Thu</th>
+ <th>Fri</th>
+ <th>Sat</th>
+ </tr>
+ <tr>
+ <td>6:00–7:00</td>
+ <td>Yoga</td>
+ <td>HIIT</td>
+ <td>Yoga</td>
+ <td>HIIT</td>
+ <td>Spin</td>
+ <td>Open Gym</td>
+ </tr>
+ <tr>
+ <td>7:15–8:15</td>
+ <td>Spin</td>
+ <td>Strength</td>
+ <td>Spin</td>
+ <td>Strength</td>
+ <td>Zumba</td>
+ <td>Yoga</td>
+ </tr>
+ <tr>
+ <td>18:00–19:00</td>
+ <td>Functional</td>
+ <td>Zumba</td>
+ <td>CrossFit</td>
+ <td>Functional</td>
+ <td>HIIT</td>
+ <td>CrossFit</td>
+ </tr>
+ <tr>
+ <td>19:15–20:15</td>
+ <td>CrossFit</td>
+ <td>Yoga</td>
+ <td>Strength</td>
+ <td>Spin</td>
+ <td>Zumba</td>
+ <td>Open Gym</td>
+ </tr>
+ </table>
+ </section>
+ <!-- Trainers -->
+ <section id="trainers">
+ <h2>Trainer Profiles</h2>
+ <p>Trainer profiles se members ko clear hota hai ki kaun kis area me expert hai.
+[web:136][web:135]</p>
+ <div class="card-grid">
+ <div class="card">
+ <div class="trainer">
+ <img src="https://images.pexels.com/photos/3837756/pexels-photo3837756.jpeg?auto=compress&cs=tinysrgb&w=600"
+ alt="Coach 1">
+ <div class="trainer-info">
+ <h4>Rahul Mehta</h4>
+ <span>Head Coach • Strength & Conditioning</span>
+ </div>
+ </div>
+ <p style="margin-top:6px;">
+ 8+ saal ka experience strength training me. Beginners ke liye safe aur
+progressive programs banate hain.
+ </p>
+ <ul>
+ <li>Specialization: Weight Training, Functional Fitness</li>
+ <li>Certifications: ACE‑CPT</li>
+ </ul>
+ </div>
+ <div class="card">
+ <div class="trainer">
+ <img src="https://images.ctfassets.net/qw8ps43tg2ux/1LPfI8kPATAzojZMBalhli/7dbdddba786444110a762b75977a8fd8/how-it-works-issa-certified-personal-trainer.webp?fm=webp&w=1440&q=75"
+ alt="Coach 2">
+ <div class="trainer-info">
+ <h4>Ananya Rao</h4>
+ <span>Yoga & Mobility Coach</span>
+ </div>
+ </div>
+ <p style="margin-top:6px;">
+ Breath‑based yoga sessions aur mobility drills se posture aur flexibility
+improve karne pe focus.
+ </p>
+ <ul>
+ <li>Specialization: Hatha Yoga, Mobility</li>
+ <li>Certifications: RYT‑200</li>
+ </ul>
+ </div>
+ <div class="card">
+ <div class="trainer">
+ <img src="data:image/jpeg;base64,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"
+ alt="Coach 3">
+ <div class="trainer-info">
+ <h4>Imran Khan</h4>
+ <span>Group Class & HIIT Coach</span>
+ </div>
+ </div>
+ <p style="margin-top:6px;">
+ High‑energy group classes jisse fat loss aur stamina dono improve hote hain.
+ </p>
+ <ul>
+ <li>Specialization: HIIT, Bodyweight Workouts</li>
+ <li>Experience: 5+ years</li>
+ </ul>
+ </div>
+ </div>
+ </section>
+ <!-- Membership Plans + Quick Enquiry -->
+ <section id="membership">
+ <h2>Membership Plans</h2>
+ <p>Different duration aur features ke saath simple membership plans dikhaye
+gaye hain. [web:123][web:136]</p>
+ <div class="two-col">
+ <div class="card">
+ <h3>Monthly</h3>
+ <p class="price">₹2,000 <span>/ month</span></p>
+ <ul>
+ <li>Gym access: All days (6 AM – 10 PM)</li>
+ <li>Group classes: 4 sessions / month</li>
+ <li>1 complimentary fitness assessment</li>
+ </ul>
+ </div>
+ <div class="card">
+ <h3>Quarterly</h3>
+ <p class="price">₹5,400 <span>/ 3 months</span></p>
+ <ul>
+ <li>Gym access: All days</li>
+ <li>Group classes: 12 sessions / quarter</li>
+ <li>Basic diet guidance from coach</li>
+ </ul>
+ </div>
+ <div class="card">
+ <h3>Annual</h3>
+ <p class="price">₹18,000 <span>/ 12 months</span></p>
+ <ul>
+ <li>Gym access: Unlimited</li>
+ <li>Group classes: Unlimited (pre‑booking)</li>
+ <li>Quarterly body composition tracking</li>
+ </ul>
+ </div>
+ </div>
+ <div class="card" style="margin-top:12px;">
+ <h3>Quick Membership Enquiry (Demo)</h3>
+ <p style="font-size:13px;">
+ Ye simple form front‑end demo ke liye hai. Real payments / backend connect
+nahi hai. [web:134]
+ </p>
+ <form id="enquiryForm">
+ <div class="two-col">
+ <div class="form-group">
+ <label for="memberName">Full Name</label>
+ <input id="memberName" type="text" required>
+ </div>
+ <div class="form-group">
+ <label for="memberPhone">Phone</label>
+ <input id="memberPhone" type="text" required>
+ </div>
+ <div class="form-group">
+ <label for="planSelect">Preferred Plan</label>
+ <select id="planSelect" required>
+ <option value="">Select</option>
+ <option value="Monthly">Monthly</option>
+ <option value="Quarterly">Quarterly</option>
+ <option value="Annual">Annual</option>
+ </select>
+ </div>
+ <div class="form-group">
+ <label for="timeSlot">Preferred Time</label>
+ <select id="timeSlot">
+ <option value="">Any</option>
+ <option value="Morning">Morning (6–10 AM)</option>
+ <option value="Evening">Evening (5–9 PM)</option>
+ </select>
+ </div>
+ </div>
+ <button class="btn-primary" style="width:100%;margin-top:6px;">Send Enquiry
+(Demo)</button>
+ </form>
+ </div>
+ </section>
+ <!-- Fitness Blog -->
+ <section id="blog">
+ <h2>Fitness Tips Blog</h2>
+ <p>Short blog posts se members ko education milti hai aur website active dikhti
+hai. [web:122]</p>
+ <div class="card-grid">
+ <article class="blog-card">
+ <h3>Beginner gym mistakes you should avoid.</h3>
+ <p class="blog-meta">Training • 5 min read</p>
+ <p>
+ Har session me heavy weight try karna ya warm‑up skip karna injuries ka risk
+badha sakta hai.
+ Slow progress bhi progress hi hai.
+ </p>
+ </article>
+ <article class="blog-card">
+ <h3>Simple way to balance diet with workouts.</h3>
+ <p class="blog-meta">Nutrition • 4 min read</p>
+ <p>
+ Har meal me protein source, thoda healthy fat aur complex carbs rakhne se
+energy stable rehti hai.
+ </p>
+ </article>
+ <article class="blog-card">
+ <h3>Why sleep is your secret training partner.</h3>
+ <p class="blog-meta">Recovery • 3 min read</p>
+ <p>
+ 7–8 ghante ki quality sleep se muscles recover karte hain, hormones balance
+rehte hain
+ aur performance improve hoti hai.
+ </p>
+ </article>
+ </div>
+ </section>
+ <footer>
+ © 2025 PowerFit Club • Email: info@powerfitclub.com • Phone: +91‑90000‑00000
+ </footer>
+ <script>
+ function scrollToSection(id){
+ const el = document.getElementById(id);
+ if(el){ el.scrollIntoView({behavior:"smooth"}); }
+ }
+ const enquiryForm = document.getElementById("enquiryForm");
+ enquiryForm.addEventListener("submit", function(e){
+ e.preventDefault();
+ const name = document.getElementById("memberName").value.trim();
+ const plan = document.getElementById("planSelect").value;
+ if(!name || !plan){
+ alert("Please fill name and select a plan.");
+ return;
+ }
+ alert("Thank you, " + name + "! Your enquiry for the " + plan + " plan has been
+received. (Demo only)");
+ enquiryForm.reset();
+ });
+ </script>
+</body>
+</html>
